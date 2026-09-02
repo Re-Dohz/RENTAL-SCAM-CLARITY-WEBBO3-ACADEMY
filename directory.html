@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent & Landlord Directory - Lagos Rent Check</title>
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="directory.css">
+</head>
+<body>
+<!-- Main Working Page-->
+  <section class="directory">
+  <div class="wrap">
+
+  <div  class="directory-title">
+  <h1 id="title"> Agent & Landlord Directory</h1>
+  <p id="sub"> Search and filter verified records</p>
+  </div>
+
+  <div class="directory-search">
+  <div class="search-box-wrapper">
+  <i class="icon ion-ios-search" id="search-icon"></i>
+  <input type="text" id="search" placeholder="Search by name, phone, ID or agency...">
+  </div>
+  
+  <div class="directory-filter">
+  <btn class="filter-btn">All</btn>
+  <btn class="filter-btn">Verified</btn>
+  <btn class="filter-btn">Pending Review</btn>
+  <btn class="filter-btn">Reported Scams</btn>
+  <btn class="filter-btn">Agency</btn>
+  <btn class="filter-btn">Landlord</btn>
+  </div>
+
+  <div class="directory-results">
+
+  <table class="directory-table">
+  <thead>
+  <tr>
+  <th>Name / Agency</th>
+  <th>Type</th>
+  <th>Phone</th>
+  <th>Status</th>
+  <th>Last Updated</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <thead>
+  <tr>
+  <td>John Doe</td>
+  <td>Landlord</td>
+  <td>0803-456-7890</td>
+  <td><span class="status-verified">Verified</span></td>
+  <td>07 MAY 2025</td>
+  </tr>
+  </thead>
+  <tbody>
+
+ <thead>
+  <tr>
+  <td>Jane Smith</td>
+  <td>Landlord</td>
+  <td>0803-456-7890</td>
+  <td><span class="status-verified">Verified</span></td>
+  <td>06 MAY 2025</td>
+  </tr>
+  </thead>
+  <tbody>
+ 
+  <thead>
+  <tr>
+  <td>Cityview Realtor</td>
+  <td>Agency</td>
+  <td>0803-456-7890</td>
+  <td><span class="status-verified">Verified</span></td>
+  <td>01 MAY 2025</td>
+  </tr>
+  </thead>
+  <tbody>
+  
+  <thead>
+  <tr>
+  <td>Gold Realty</td>
+  <td>Agency</td>
+  <td>0803-456-7560</td>
+  <td><span class="status-pending">Pending</span></td>
+  <td>04 MAY 2025</td>
+  </tr>
+  </thead>
+  <tbody>
+
+  <thead>
+  <tr>
+  <td>Gold Realty</td>
+  <td>Agency</td>
+  <td>0803-456-7560</td>
+  <td><span class="status-pending">Pending</span></td>
+  <td>01 MAY 2025</td>
+  </tr>
+  </thead>
+  <tbody>
+
+  <thead>
+  <tr>
+  <td>Softtouch Realtor</td>
+  <td>Agency</td>
+  <td>0803-456-7890</td>
+  <td><span class="status-scam">Reported Scam</span>
+  </td>
+  <td>02 MAY 2026</td>
+  </tr>
+  </thead>
+  <tbody>
+  
+  <thead>
+  <tr>
+  <td>The Perfect Realtor</td>
+  <td>Agency</td>
+  <td>0803-456-7890</td>
+  <td><span class="status-scam">Reported Scam</span>
+  </td>
+  <td>06 APRIL 2026</td>
+  </tr>
+  </thead>
+  <tbody>
+  
+  <thead>
+  <tr>
+  <td>Ocean Realtor</td>
+  <td>Agency</td>
+  <td>0803-456-7890</td>
+  <td><span class="status-scam">Reported Scam</span>
+  </td>
+  <td>09 JULY 2026</td>
+  </tr>
+  </thead>
+  <tbody>
+  </table>
+  </div>
+
+
+  <div class="directory-pagination">
+  <p class="directory-count">Showing 1-10 of 100 records</p>
+  <div class="directory-page-btns">
+  <button class="page-btn arrow">&lsaquo;</button>
+  <button class="page-btn active">1</button>
+  <button class="page-btn">2</button>
+  <button class="page-btn">3</button>
+  <span class="dots">...</span>
+  <button class="page-btn">1</button>
+  <button class="page-btn arrow">&rsaquo;</button>
+  </div>
+  </div>
+  
+  </div>
+  </section>
+
+
+</body>
+</html>
