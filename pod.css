@@ -1,0 +1,447 @@
+/* Semantic Pod — Lagos Rent Check — shared brand foundation (calm blue edition) */
+:root{
+  --brand: #356B8C;
+  --brand-dark: #1F4057;
+  --secondary: #808000;
+  --gold: #D6A64F;
+  --danger: #DC143C;
+  --ink: #17232B;
+  --muted: #61727D;
+  --paper: #F7FAFC;
+  --line: #D8E1E6;
+
+  --font-heading: Arial, Helvetica, sans-serif;
+  --font-body: Arial, Helvetica, sans-serif;
+
+  --s1: 8px; --s2: 16px; --s3: 24px;
+  --s4: 40px; --s5: 64px; --s6: 96px;
+
+  --radius: 6px;
+  --wrap: 1080px;
+}
+
+/* Responsive foundation */
+*{ box-sizing: border-box; }
+html{ width: 100%; overflow-x: hidden; }
+body{
+  width: 100%;
+  min-width: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  margin: 0;
+  line-height: 1.6;
+}
+img, video, svg{ max-width: 100%; height: auto; }
+
+h1, h2, h3{
+  font-family: var(--font-heading);
+  color: var(--brand-dark);
+  margin: 0;
+}
+
+a{ color: var(--brand); text-decoration: none; }
+a:hover{ text-decoration: underline; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible{
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.wrap{
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--s2);
+}
+
+.container, .grid, .card-grid, .form-row{
+  width: 100%;
+  max-width: 100%;
+}
+
+.table-wrapper{
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+input, select, textarea{
+  width: 100%;
+  max-width: 100%;
+  font-family: var(--font-body);
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--s3);
+}
+
+.form-row{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s2);
+}
+
+@media (max-width: 700px){
+  .wrap{ padding-inline: var(--s2); }
+  .form-row{ grid-template-columns: 1fr; }
+  .card-grid{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px){
+  .wrap{ padding-inline: var(--s1); }
+  .btn{ max-width: 100%; }
+}
+
+/* ---------------------------------------------------- */
+/* Site header / nav — shared across all ten pages       */
+/* ---------------------------------------------------- */
+.site-header{
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.site-header .wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s3);
+  height: 64px;
+}
+.brand-mark{
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--brand-dark);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.brand-mark a{ color: inherit; }
+.brand-mark a:hover{ text-decoration: none; }
+
+.main-nav{
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+  flex: 1;
+  justify-content: flex-end;
+}
+.main-nav ul{
+  list-style: none;
+  display: flex;
+  gap: var(--s3);
+  margin: 0;
+  padding: 0;
+}
+.main-nav a{
+  color: var(--muted);
+  font-size: 0.92rem;
+  padding: var(--s1) 2px;
+  border-bottom: 2px solid transparent;
+}
+.main-nav a:hover{ color: var(--brand-dark); text-decoration: none; }
+.main-nav a.active{
+  color: var(--brand-dark);
+  font-weight: 700;
+  border-bottom-color: var(--brand);
+}
+
+.nav-toggle-checkbox{
+  position: absolute;
+  opacity: 0;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+.nav-toggle{
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--brand-dark);
+  flex-shrink: 0;
+}
+.nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
+  content: "";
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  position: relative;
+}
+.nav-toggle span::before{ position: absolute; top: -6px; }
+.nav-toggle span::after{ position: absolute; top: 6px; }
+
+@media (max-width: 700px){
+  .main-nav{
+    position: fixed;
+    inset: 64px 0 auto 0;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: var(--s2);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .15s ease, transform .15s ease;
+  }
+  .nav-toggle-checkbox:checked ~ .main-nav{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .main-nav ul{
+    flex-direction: column;
+    gap: 0;
+  }
+  .main-nav a{
+    display: block;
+    padding: var(--s2) var(--s1);
+    border-bottom: 1px solid var(--line);
+  }
+  .main-nav a.active{ border-bottom: 1px solid var(--line); }
+  .nav-toggle{ display: inline-flex; }
+  .nav-toggle-checkbox:checked + .nav-toggle{
+    border-color: var(--brand);
+    color: var(--brand);
+  }
+}
+
+/* ---------------------------------------------------- */
+/* Pod hero                                              */
+/* ---------------------------------------------------- */
+.pod-hero{
+  padding-block: var(--s5) var(--s4);
+  border-bottom: 1px solid var(--line);
+}
+.pod-hero h1{
+  font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem);
+  margin-bottom: var(--s1);
+}
+.pod-hero p{
+  color: var(--muted);
+  font-size: 1rem;
+  max-width: 52ch;
+  margin: 0 0 var(--s3);
+}
+
+.pod-search{
+  display: flex;
+  gap: var(--s1);
+  max-width: 480px;
+}
+.pod-search input{
+  padding: 10px var(--s2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+.pod-search input::placeholder{ color: var(--muted); }
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px var(--s3);
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn:hover{ text-decoration: none; }
+.btn-primary{
+  background: var(--brand-dark);
+  color: #fff;
+}
+.btn-primary:hover{ background: var(--brand); }
+.btn-outline{
+  background: #fff;
+  color: var(--brand-dark);
+  border-color: var(--line);
+}
+.btn-outline:hover{ border-color: var(--brand); }
+
+/* ---------------------------------------------------- */
+/* Category filters                                      */
+/* ---------------------------------------------------- */
+.pod-filters{
+  padding-block: var(--s3);
+  border-bottom: 1px solid var(--line);
+}
+.filter-list{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+.filter-list li{ display: flex; }
+
+.filter-list input[type="radio"]{
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+.filter-list label{
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--muted);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px var(--s3);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.filter-list label:hover{ border-color: var(--brand); color: var(--brand-dark); }
+.filter-list input:checked + label{
+  background: var(--brand-dark);
+  border-color: var(--brand-dark);
+  color: #fff;
+}
+.filter-list input:focus-visible + label{
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* Show/hide posts based on which filter radio is checked (CSS-only, no JS) */
+body:has(#filter-scam-alerts:checked) .post-card:not([data-category="scam-alerts"]),
+body:has(#filter-neighborhood-reports:checked) .post-card:not([data-category="neighborhood-reports"]),
+body:has(#filter-renter-education:checked) .post-card:not([data-category="renter-education"]),
+body:has(#filter-updates:checked) .post-card:not([data-category="updates"]){
+  display: none;
+}
+
+/* ---------------------------------------------------- */
+/* Posts section                                         */
+/* ---------------------------------------------------- */
+.posts-section{
+  padding-block: var(--s4) var(--s6);
+}
+.posts-heading{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--s3);
+  gap: var(--s2);
+}
+.posts-heading h2{ font-size: 1.15rem; }
+.posts-heading a{ font-size: 0.9rem; white-space: nowrap; }
+
+.post-card{
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.post-card img{
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.post-body{
+  padding: var(--s2) var(--s2) var(--s3);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+.post-tag{
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--brand);
+  letter-spacing: 0.03em;
+}
+.tag-scam{ color: var(--danger); }
+.tag-education{ color: var(--secondary); }
+.tag-updates{ color: var(--gold); }
+
+.post-body h3{
+  font-size: 1rem;
+  line-height: 1.35;
+  font-weight: 700;
+}
+.post-body h3 a{ color: var(--ink); }
+.post-body h3 a:hover{ color: var(--brand-dark); text-decoration: none; }
+
+.post-date{
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: auto;
+  padding-top: var(--s1);
+}
+
+/* ---------------------------------------------------- */
+/* Footer — shared                                       */
+/* ---------------------------------------------------- */
+.site-footer{
+  border-top: 1px solid var(--line);
+  padding-block: var(--s3);
+  background: #fff;
+}
+.site-footer .wrap{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s2);
+}
+.footer-brand{
+  font-weight: 700;
+  color: var(--brand-dark);
+  font-size: 0.9rem;
+}
+.footer-links{
+  list-style: none;
+  display: flex;
+  gap: var(--s3);
+  margin: 0;
+  padding: 0;
+  font-size: 0.85rem;
+}
+.footer-links a{ color: var(--muted); }
+.footer-legal{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--s1);
+  font-size: 0.78rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  margin-top: var(--s2);
+  padding-top: var(--s2);
+}
+.footer-legal a{ color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce){
+  *{ transition: none !important; animation: none !important; }
+}

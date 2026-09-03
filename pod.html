@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rent Check Pod - News & Safety Guides</title>
+  <link rel="stylesheet" href="pod.css">
+</head>
+<body>
+
+  <!-- header / nav -->
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand-mark">
+        <a href="index.html">Lagos Rent Check</a>
+      </div>
+
+      <input type="checkbox" id="navToggle" class="nav-toggle-checkbox">
+      <label for="navToggle" class="nav-toggle">
+        <span></span>
+      </label>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Landing</a></li>
+          <li><a href="the-problem.html">The Problem</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="faq.html">Guide & FAQ</a></li>
+          <li><a href="pod.html" class="active">Pod</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- hero -->
+    <section class="pod-hero">
+      <div class="wrap">
+        <h1>Rent Check Pod</h1>
+        <p>News, alerts and guides for renters - the latest scam patterns, neighbourhood reports and verification tips from the Lagos Rent Check team.</p>
+
+        <form class="pod-search" action="#" method="get">
+          <input type="search" name="q" placeholder="Search articles...">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- category filters (radio buttons act as tabs, no JS) -->
+    <section class="pod-filters">
+      <div class="wrap">
+        <ul class="filter-list">
+          <li>
+            <input type="radio" name="pod-filter" id="filter-all" checked>
+            <label for="filter-all">All</label>
+          </li>
+          <li>
+            <input type="radio" name="pod-filter" id="filter-scam-alerts">
+            <label for="filter-scam-alerts">Scam Alerts</label>
+          </li>
+          <li>
+            <input type="radio" name="pod-filter" id="filter-neighborhood-reports">
+            <label for="filter-neighborhood-reports">Neighborhood Reports</label>
+          </li>
+          <li>
+            <input type="radio" name="pod-filter" id="filter-renter-education">
+            <label for="filter-renter-education">Renter Education</label>
+          </li>
+          <li>
+            <input type="radio" name="pod-filter" id="filter-updates">
+            <label for="filter-updates">Updates</label>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- posts -->
+    <section class="posts-section">
+      <div class="wrap">
+        <div class="posts-heading">
+          <h2>Latest posts</h2>
+          <a href="#">View all &rarr;</a>
+        </div>
+
+        <div class="card-grid">
+
+          <article class="post-card" data-category="scam-alerts">
+            <img src="image1.jpg" alt="Scam alert - rental listing warning">
+            <div class="post-body">
+              <span class="post-tag tag-scam">SCAM ALERTS</span>
+              <h3><a href="#">New scam pattern in Lekki, Ikoyi listings</a></h3>
+              <span class="post-date">02 May 2025</span>
+            </div>
+          </article>
+
+          <article class="post-card" data-category="neighborhood-reports">
+            <img src="image2.jpg" alt="Ikeja GRA neighbourhood">
+            <div class="post-body">
+              <span class="post-tag tag-neighborhood">NEIGHBORHOOD REPORTS</span>
+              <h3><a href="#">Ikeja GRA rent report - April 2025</a></h3>
+              <span class="post-date">01 May 2025</span>
+            </div>
+          </article>
+
+          <article class="post-card" data-category="renter-education">
+            <img src="image3.jpg" alt="Verifying property ownership documents">
+            <div class="post-body">
+              <span class="post-tag tag-education">RENTER EDUCATION</span>
+              <h3><a href="#">How to verify property ownership in Lagos</a></h3>
+              <span class="post-date">30 Apr 2025</span>
+            </div>
+          </article>
+
+          <article class="post-card" data-category="updates">
+            <img src="image4.jpg" alt="Court ruling on rental fraud">
+            <div class="post-body">
+              <span class="post-tag tag-updates">UPDATES</span>
+              <h3><a href="#">Court jails 3 rental fraudsters in Lagos</a></h3>
+              <span class="post-date">29 Apr 2025</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-brand">Lagos Rent Check</div>
+      <ul class="footer-links">
+        <li><a href="faq.html">Guide & FAQ</a></li>
+        <li><a href="pod.html">Pod</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="footer-legal">
+        <span>&copy; 2025 Lagos Rent Check</span>
+        <span><a href="#">Privacy</a> &nbsp; <a href="#">Terms</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
