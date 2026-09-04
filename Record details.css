@@ -1,0 +1,330 @@
+:root {
+  --brand: #356b8c;
+  --brand-dark: #1f4057;
+  --secondary: #808000;
+  --accent: #d6a64f;
+  --danger: #dc143c;
+  --ink: #17232b;
+  --muted: #61727d;
+  --paper: #f7fafc;
+  --box: #ffffff;
+  --verified: #dcfce7;
+  --pending: #fef9c3;
+  --ver-shadow: #15803d;
+  --danger-shadow: #fee2e2;
+  --pending-shadow: #a16207;
+  --line: #d8e1e6;
+  --font-heading: Arial, Helvetica, sans-serif;
+  --font-body: Arial, Helvetica, sans-serif;
+  --s1: 6px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 40px;
+  --s5: 64px;
+  --s6: 96px;
+  --radius: 6px;
+  --wrap: 1080px;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  min-width: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--s2);
+}
+
+/* ========================================== Record Detail CSS (Corrected Grid Layout) ========================================== */
+
+.detail {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  padding-block: var(--s4);
+}
+
+/* Top Navigation */
+.detail-top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--s3);
+  font-size: 14px;
+}
+
+.back-btn {
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s1);
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+.share-record-btn {
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: all 0.2s ease;
+}
+
+.share-record-btn:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+/* Main Profile Header Card */
+.detail-record {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--s3);
+  margin-bottom: var(--s3);
+  box-shadow: 0 1px 3px rgba(23, 35, 43, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--s3);
+}
+
+.detail-record-main {
+  flex: 1;
+}
+
+.detail-record-title {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin-bottom: var(--s1);
+}
+
+.detail-record-title h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--brand-dark);
+}
+
+.detail-record-info p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.detail-record-info strong {
+  color: var(--ink);
+}
+
+/* Status History Box */
+.detail-status-history {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--s2);
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.detail-status-history h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--brand-dark);
+  margin-bottom: var(--s1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+.status-row:last-child {
+  border-bottom: none;
+}
+
+.status-name {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.status-date {
+  color: var(--muted);
+}
+
+/* Content Containers */
+.detail-content-section,
+.detail-proof,
+.complaint-summary {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--s3);
+  margin-bottom: var(--s3);
+  box-shadow: 0 1px 3px rgba(23, 35, 43, 0.05);
+}
+
+.detail-content-section h3,
+.detail-proof h3,
+.complaint-summary h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--brand-dark);
+  margin-bottom: var(--s2);
+  padding-bottom: var(--s1);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Grid Layouts for Summary & Proof Items */
+.summary-grid,
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--s2);
+}
+
+.summary-item,
+.proof-item {
+  padding: 4px 0;
+}
+
+.summary-item h4,
+.proof-item h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+.summary-item p,
+.proof-item p {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* Complaint Section Sub-grid */
+.complaint-reports {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s2);
+  margin-bottom: var(--s3);
+  text-align: center;
+}
+
+.complaint-reports>div {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--s2);
+}
+
+.complaint-reports h4 {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.complaint-count {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--brand-dark);
+  margin: 0;
+}
+
+.report-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--brand);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.report-btn:hover {
+  background-color: var(--brand-dark);
+}
+
+/* Status Badges */
+.status-verified {
+  background-color: #dcfce7;
+  color: #15803d;
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.status-pending {
+  background-color: #fef9c3;
+  color: #a16207;
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.status-scam {
+  background-color: #fee2e2;
+  color: var(--danger);
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+/* Responsive Viewports */
+@media (max-width: 768px) {
+  .detail-record {
+    flex-direction: column;
+  }
+  
+  .detail-status-history {
+    width: 100%;
+  }
+  
+  .complaint-reports {
+    grid-template-columns: 1fr;
+  }
+}
